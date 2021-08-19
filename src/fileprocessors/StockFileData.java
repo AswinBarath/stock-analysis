@@ -5,14 +5,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class StockFileData {
-	
+
 	List<HashMap<String, Double>> data = new LinkedList<>();
-	
-	public void printData(){
+
+	public void printData() {
 		System.out.println(data);
 	}
-	
-	public void addData(List<HashMap<String, Double>> dataIn){
+
+	public void addData(List<HashMap<String, Double>> dataIn) {
 		data = dataIn;
+	}
+	
+	public List<HashMap<String, Double>> getData() {
+		return data;
 	}
 }

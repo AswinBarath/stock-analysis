@@ -1,19 +1,14 @@
 package aggregators;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class MaxAggregator extends Aggregator{
-	
-	public MaxAggregator(List<Double> numbers) {
-		this.numbers = new ArrayList<Double>();
-	}
+public class MaxAggregator extends Aggregator {
 
 	@Override
 	public double calculate() {
 		double max = numbers.get(0);
-		for(Double number : numbers){
-			if(number > max){
+		for (Double number : numbers) {
+			if (number > max) {
 				max = number;
 			}
 		}
@@ -24,5 +19,5 @@ public class MaxAggregator extends Aggregator{
 	public List<Double> getValues() {
 		return numbers;
 	}
-	
+
 }

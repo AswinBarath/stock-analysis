@@ -20,6 +20,10 @@ public class StockFileReader {
 		String[] header = line.split(",");
 		List<String> values = new ArrayList<String>();
 		values = Arrays.asList(header);
+//		Check header values:
+//		for(String value : values) {
+//			System.out.println(value);
+//		}
 		return values;
 	}
 
@@ -37,9 +41,8 @@ public class StockFileReader {
 	 */
 	public List<String> readFileData() throws IOException {
 		List<String> lines = new ArrayList<String>();
-		// Insert your code here..
 		try (BufferedReader br = new BufferedReader(new FileReader(this.filePath))) {
-			br.readLine();
+			br.readLine(); // skips the first row (i.e.), the headers of the data set
 			String line = null;
 			while ((line = br.readLine()) != null) {
 				lines.add(line);

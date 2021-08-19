@@ -17,7 +17,7 @@ public class StockFileApplication {
 		StockFileData fileData = new StockFileData();
 		fileData.addData(dataResult);
 		fileData.printData();
-		System.out.println(dataResult.size());
+		System.out.println(dataResult.size()); // 251 - No. of rows from table.csv data set
 	}
 
 	/**
@@ -30,14 +30,21 @@ public class StockFileApplication {
 	 */
 	public static List<HashMap<String, Double>> populateStockFileData(List<String> headers, List<String> lines) {
 		List<HashMap<String, Double>> dataResult = new ArrayList<>();
-		// Insert your code here..
+		
 		for (int row = 0; row < lines.size(); row++) {
-			HashMap<String, Double> currRow = new HashMap<String, Double>();
+			
+			HashMap<String, Double> currRow = new HashMap<>();
+			
+//			Generating current row as HashMap by iterating through each column of current row			
 			for (int col = 0; col < headers.size(); col++) {
-				String curr[] = lines.get(row).split(",");
-				currRow.put(headers.get(col), Double.parseDouble(curr[col]));
+				String currRowInString[] = lines.get(row).split(",");
+				currRow.put(headers.get(col), Double.parseDouble(currRowInString[col]));
 			}
+			
+//			Check how the current row is stored
 //			System.out.println(currRow.toString());
+			
+//			Each "row" HashMap is added into the "dataResult" ArrayList
 			dataResult.add(currRow);
 		}
 		return dataResult;
