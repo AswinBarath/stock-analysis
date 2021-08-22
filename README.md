@@ -1,5 +1,9 @@
 # Stock analysis with Java
 
+<p>
+<img src="https://raw.githubusercontent.com/AswinBarath/stock-analysis/master/assets/Stock%20analysis.png" alt="Stock analysis" width="800px"/>
+</p>
+
 ## What's unique about this project?
 
 - Stock analysis uses Java to analyse and provide insights from the given stock dataset.
